@@ -91,14 +91,14 @@ FreeEmotes.TextSize = 1.000
 FreeEmotes.TextWrapped = true
 FreeEmotes.MouseButton1Down:connect(function()
 	local emotes = {
-		ok = 7198989668,
-		nice = 7202863182,
+		bop = 7198989668,
+		punch = 7202863182,
 		happy = 4841405708,
 		sad = 4841407203,
 		monkey = 3333499508,
 		baby = 4265725525,
 		line = 4049037604,
-		ahh = 5915648917,
+		breakdance = 5915648917,
 		twirl = 3334968680,
 		top = 3361276673,
 		dizzy = 3361426436,
