@@ -19,6 +19,8 @@ local ResizeSmallMediumr15 = Instance.new("TextButton")
 local CheckerPattern_4 = Instance.new("ImageLabel")
 local ResizeLargeExtraLarger15 = Instance.new("TextButton")
 local CheckerPattern_5 = Instance.new("ImageLabel")
+local emotes = Instance.new("TextButton")
+local CheckerPattern_6 = Instance.new("ImageLabel")
 
 --Properties:
 
@@ -31,8 +33,8 @@ Main.AnchorPoint = Vector2.new(0.5, 0.5)
 Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Main.BorderColor3 = Color3.fromRGB(27, 42, 53)
 Main.BorderSizePixel = 0
-Main.Position = UDim2.new(0.579965889, 0, 0.428013444, 0)
-Main.Size = UDim2.new(0, 628, 0, 381)
+Main.Position = UDim2.new(0.580364585, 0, 0.428013444, 0)
+Main.Size = UDim2.new(0, 629, 0, 381)
 
 UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(48, 51, 61)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(74, 74, 75))}
 UIGradient.Parent = Main
@@ -120,266 +122,6 @@ CircleReach.MouseButton1Down:connect(function()
 	local Frame_5 = Instance.new("Frame")
 	local TextButton_2 = Instance.new("TextButton")
 
-	--Properties:
-
-	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-	ScreenGui.DisplayOrder = 999999999
-	ScreenGui.ResetOnSpawn = false
-
-	Frame.Parent = ScreenGui
-	Frame.AnchorPoint = Vector2.new(0, 0.5)
-	Frame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-	Frame.BackgroundTransparency = 0.300
-	Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Frame.BorderSizePixel = 4
-	Frame.Position = UDim2.new(0, 0, 0.600000024, 0)
-	Frame.Size = UDim2.new(0.150000006, 0, 0.300000012, 0)
-
-	TextLabel.Parent = Frame
-	TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TextLabel.BackgroundTransparency = 1.000
-	TextLabel.Size = UDim2.new(0.600000024, 0, 0.200000003, 0)
-	TextLabel.Font = Enum.Font.SourceSans
-	TextLabel.Text = "Reach:"
-	TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-	TextLabel.TextScaled = true
-	TextLabel.TextSize = 14.000
-	TextLabel.TextWrapped = true
-
-	TextBox.Parent = Frame
-	TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TextBox.BackgroundTransparency = 1.000
-	TextBox.Position = UDim2.new(0.600000024, 0, 0, 0)
-	TextBox.Size = UDim2.new(0.400000006, 0, 0.200000003, 0)
-	TextBox.Font = Enum.Font.SourceSans
-	TextBox.Text = "3.5"
-	TextBox.TextColor3 = Color3.fromRGB(255, 76, 76)
-	TextBox.TextScaled = true
-	TextBox.TextSize = 14.000
-	TextBox.TextWrapped = true
-
-	TextLabel_2.Parent = Frame
-	TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TextLabel_2.BackgroundTransparency = 1.000
-	TextLabel_2.Position = UDim2.new(0, 0, 0.200000003, 0)
-	TextLabel_2.Size = UDim2.new(0.600000024, 0, 0.200000003, 0)
-	TextLabel_2.Font = Enum.Font.SourceSans
-	TextLabel_2.Text = "Shape:"
-	TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-	TextLabel_2.TextScaled = true
-	TextLabel_2.TextSize = 14.000
-	TextLabel_2.TextWrapped = true
-
-	TextLabel_3.Parent = Frame
-	TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TextLabel_3.BackgroundTransparency = 1.000
-	TextLabel_3.Position = UDim2.new(0, 0, 0.400000006, 0)
-	TextLabel_3.Size = UDim2.new(0.600000024, 0, 0.200000003, 0)
-	TextLabel_3.Font = Enum.Font.SourceSans
-	TextLabel_3.Text = "Damage:"
-	TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-	TextLabel_3.TextScaled = true
-	TextLabel_3.TextSize = 14.000
-	TextLabel_3.TextWrapped = true
-
-	TextLabel_4.Parent = Frame
-	TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TextLabel_4.BackgroundTransparency = 1.000
-	TextLabel_4.Position = UDim2.new(0, 0, 0.600000024, 0)
-	TextLabel_4.Size = UDim2.new(0.600000024, 0, 0.200000003, 0)
-	TextLabel_4.Font = Enum.Font.SourceSans
-	TextLabel_4.Text = "Visualizer:"
-	TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
-	TextLabel_4.TextScaled = true
-	TextLabel_4.TextSize = 14.000
-	TextLabel_4.TextWrapped = true
-
-	TextButton.Parent = Frame
-	TextButton.AnchorPoint = Vector2.new(0, 1)
-	TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TextButton.BackgroundTransparency = 1.000
-	TextButton.Position = UDim2.new(0, 0, 1, 0)
-	TextButton.Size = UDim2.new(1, 0, 0.150000006, 0)
-	TextButton.Font = Enum.Font.SourceSansBold
-	TextButton.Text = "Kill Script"
-	TextButton.TextColor3 = Color3.fromRGB(222, 0, 0)
-	TextButton.TextScaled = true
-	TextButton.TextSize = 14.000
-	TextButton.TextWrapped = true
-
-	Frame_2.Parent = Frame
-	Frame_2.Active = true
-	Frame_2.AnchorPoint = Vector2.new(0, 0.5)
-	Frame_2.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
-	Frame_2.BorderSizePixel = 0
-	Frame_2.Position = UDim2.new(0.725000024, 0, 0.699999988, 0)
-	Frame_2.Size = UDim2.new(0, 25, 0, 25)
-	Frame_2.ZIndex = 5
-
-	Frame_3.Parent = Frame_2
-	Frame_3.AnchorPoint = Vector2.new(0.5, 0.5)
-	Frame_3.BackgroundColor3 = Color3.fromRGB(255, 76, 76)
-	Frame_3.BorderSizePixel = 0
-	Frame_3.LayoutOrder = 1
-	Frame_3.Position = UDim2.new(0.5, 0, 0.5, 0)
-
-	Frame_4.Parent = Frame
-	Frame_4.Active = true
-	Frame_4.AnchorPoint = Vector2.new(0, 0.5)
-	Frame_4.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
-	Frame_4.BorderSizePixel = 0
-	Frame_4.Position = UDim2.new(0.725000024, 0, 0.5, 0)
-	Frame_4.Size = UDim2.new(0, 25, 0, 25)
-	Frame_4.ZIndex = 5
-
-	Frame_5.Parent = Frame_4
-	Frame_5.AnchorPoint = Vector2.new(0.5, 0.5)
-	Frame_5.BackgroundColor3 = Color3.fromRGB(255, 76, 76)
-	Frame_5.BorderSizePixel = 0
-	Frame_5.LayoutOrder = 1
-	Frame_5.Position = UDim2.new(0.5, 0, 0.5, 0)
-	Frame_5.Size = UDim2.new(1, 0, 1, 0)
-
-	TextButton_2.Parent = Frame
-	TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TextButton_2.BackgroundTransparency = 1.000
-	TextButton_2.Position = UDim2.new(0.600000024, 0, 0.200000003, 0)
-	TextButton_2.Size = UDim2.new(0.400000006, 0, 0.200000003, 0)
-	TextButton_2.Font = Enum.Font.SourceSans
-	TextButton_2.Text = "Sphere"
-	TextButton_2.TextColor3 = Color3.fromRGB(255, 76, 76)
-	TextButton_2.TextScaled = true
-	TextButton_2.TextSize = 14.000
-	TextButton_2.TextWrapped = true
-
-	repeat wait() until game.Players.LocalPlayer
-	ScreenGui.Parent = game:GetService("CoreGui")
-
-
-
-	Frame_4.InputBegan:connect(function(inp)
-		if inp.UserInputType == Enum.UserInputType.MouseButton1 then
-			dmgEnabled = not dmgEnabled
-			local goal = {Size = UDim2.new(0,0,0,0)}
-			if dmgEnabled then
-				goal = {Size = UDim2.new(1,0,1,0)}
-			end
-			game:GetService("TweenService"):Create(Frame_5,TweenInfo.new(0.12,Enum.EasingStyle.Quad),goal):Play()
-		end
-	end)
-	Frame_2.InputBegan:connect(function(inp)
-		if inp.UserInputType == Enum.UserInputType.MouseButton1 then
-			visualizerEnabled = not visualizerEnabled
-			local goal = {Size = UDim2.new(0,0,0,0)}
-			if visualizerEnabled then
-				goal = {Size = UDim2.new(1,0,1,0)}
-			end
-			game:GetService("TweenService"):Create(Frame_3,TweenInfo.new(0.12,Enum.EasingStyle.Linear),goal):Play()
-		end
-	end)
-	TextButton_2.MouseButton1Click:connect(function()
-		if reachType == "Sphere" then
-			reachType = "Line"
-		else
-			reachType = "Sphere"
-		end
-		TextButton_2.Text = reachType
-	end)
-	TextButton.MouseButton1Click:connect(function()
-		trueActive = false
-		ScreenGui:Destroy()
-	end)
-	game:GetService("UserInputService").InputBegan:connect(function(inp,gpe)
-		if gpe then return end
-		if inp.KeyCode == Enum.KeyCode.H then
-			ScreenGui.Enabled = not ScreenGui.Enabled
-		end
-	end)
-
-	local plr = game.Players.LocalPlayer
-
-	local function onHit(hit,handle)
-		local victim = hit.Parent:FindFirstChildOfClass("Humanoid")
-		if victim and victim.Parent.Name ~= game.Players.LocalPlayer.Name then
-			if dmgEnabled then
-				for _,v in pairs(hit.Parent:GetChildren()) do
-					if v:IsA("Part") then
-						firetouchinterest(v,handle,0)
-						firetouchinterest(v,handle,1)
-					end
-				end
-			else
-				firetouchinterest(hit,handle,0)
-				firetouchinterest(hit,handle,1)
-			end
-		end
-	end
-
-	local function getWhiteList()
-		local wl = {}
-		for _,v in pairs(game.Players:GetPlayers()) do
-			if v ~= plr then
-				local char = v.Character
-				if char then
-					for _,q in pairs(char:GetChildren()) do
-						if q:IsA("Part") then
-							table.insert(wl,q)
-						end
-					end
-				end
-			end
-		end
-		return wl
-	end
-
-	game:GetService("RunService").RenderStepped:connect(function()
-		if not active or not trueActive then return end
-		local s = plr.Character and plr.Character:FindFirstChildOfClass("Tool")
-		if not s then visualizer.Parent = nil end
-		if s then
-			local handle = s:FindFirstChild("Handle") or s:FindFirstChildOfClass("Part")
-			if handle then
-				if visualizerEnabled then
-					visualizer.Parent = workspace
-				else
-					visualizer.Parent = nil
-				end
-				local reach = tonumber(TextBox.Text)
-				if reach then
-					if reachType == "Sphere" then
-						visualizer.Shape = Enum.PartType.Ball
-						visualizer.Size = Vector3.new(reach,reach,reach)
-						visualizer.CFrame = handle.CFrame
-						for _,v in pairs(game.Players:GetPlayers()) do
-							local hrp = v.Character and v.Character:FindFirstChild("HumanoidRootPart")
-							if hrp and handle then
-								local mag = (hrp.Position-handle.Position).magnitude
-								if mag <= reach then
-									onHit(hrp,handle)
-								end
-							end
-						end
-					elseif reachType == "Line" then
-						local origin = (handle.CFrame*CFrame.new(0,0,-2)).p
-						local ray = Ray.new(origin,handle.CFrame.lookVector*-reach)
-						local p,pos = workspace:FindPartOnRayWithWhitelist(ray,getWhiteList())
-						visualizer.Shape = Enum.PartType.Block
-						visualizer.Size = Vector3.new(1,0.8,reach)
-						visualizer.CFrame = handle.CFrame*CFrame.new(0,0,(reach/2)+2)
-						if p then
-							onHit(p,handle)
-						else
-							for _,v in pairs(handle:GetTouchingParts()) do
-								onHit(v,handle)
-							end
-						end
-					end
-				end
-			end
-		end
-	end)
-end)
-
 CheckerPattern_2.Name = "CheckerPattern"
 CheckerPattern_2.Parent = CircleReach
 CheckerPattern_2.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -405,17 +147,17 @@ ClickToTeleport.TextScaled = true
 ClickToTeleport.TextSize = 1.000
 ClickToTeleport.TextWrapped = true
 ClickToTeleport.MouseButton1Down:connect(function()
-	mouse = game.Players.LocalPlayer:GetMouse()
-	tool = Instance.new("Tool")
-	tool.RequiresHandle = false
-	tool.Name = "Click Teleport"
-	tool.Activated:connect(function()
-		local pos = mouse.Hit+Vector3.new(0,2.5,0)
-		pos = CFrame.new(pos.X,pos.Y,pos.Z)
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+		mouse = game.Players.LocalPlayer:GetMouse()
+		tool = Instance.new("Tool")
+		tool.RequiresHandle = false
+		tool.Name = "Click Teleport"
+		tool.Activated:connect(function()
+			local pos = mouse.Hit+Vector3.new(0,2.5,0)
+			pos = CFrame.new(pos.X,pos.Y,pos.Z)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+		end)
+		tool.Parent = game.Players.LocalPlayer.Backpack
 	end)
-	tool.Parent = game.Players.LocalPlayer.Backpack
-end)
 
 CheckerPattern_3.Name = "CheckerPattern"
 CheckerPattern_3.Parent = ClickToTeleport
@@ -446,7 +188,7 @@ TopBar.Name = "TopBar"
 TopBar.Parent = Main
 TopBar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TopBar.BackgroundTransparency = 1.000
-TopBar.Size = UDim2.new(0, 628, 0, 41)
+TopBar.Size = UDim2.new(0, 628, 0, 40)
 TopBar.Image = "rbxassetid://3570695787"
 TopBar.ImageColor3 = Color3.fromRGB(40, 40, 40)
 TopBar.ScaleType = Enum.ScaleType.Slice
@@ -465,52 +207,52 @@ ResizeSmallMediumr15.TextScaled = true
 ResizeSmallMediumr15.TextSize = 1.000
 ResizeSmallMediumr15.TextWrapped = true
 ResizeSmallMediumr15.MouseButton1Down:connect(function()
-	-- script made by Dev!#6969
+		-- script made by Dev!#6969
 
-	local LocalPlayer = game:GetService("Players").LocalPlayer
-	local Character = LocalPlayer.Character
-	local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+		local LocalPlayer = game:GetService("Players").LocalPlayer
+		local Character = LocalPlayer.Character
+		local Humanoid = Character:FindFirstChildOfClass("Humanoid")
 
-	local function rm()
-		for i,v in pairs(Character:GetDescendants()) do
-			if v:IsA("BasePart") then
-				if v.Name ~= "Head" then
-					for i,cav in pairs(v:GetDescendants()) do
-						if cav:IsA("Attachment") then
-							if cav:FindFirstChild("OriginalPosition") then
-								cav.OriginalPosition:Destroy()
+		local function rm()
+			for i,v in pairs(Character:GetDescendants()) do
+				if v:IsA("BasePart") then
+					if v.Name ~= "Head" then
+						for i,cav in pairs(v:GetDescendants()) do
+							if cav:IsA("Attachment") then
+								if cav:FindFirstChild("OriginalPosition") then
+									cav.OriginalPosition:Destroy()
+								end
 							end
 						end
-					end
-					v:FindFirstChild("OriginalSize"):Destroy()
-					if v:FindFirstChild("AvatarPartScaleType") then
-						v:FindFirstChild("AvatarPartScaleType"):Destroy()
+						v:FindFirstChild("OriginalSize"):Destroy()
+						if v:FindFirstChild("AvatarPartScaleType") then
+							v:FindFirstChild("AvatarPartScaleType"):Destroy()
+						end
 					end
 				end
 			end
 		end
-	end
 
-	rm()
-	wait(0.5)
-	Humanoid:FindFirstChild("BodyTypeScale"):Destroy()
-	wait(1)
+		rm()
+		wait(0.5)
+		Humanoid:FindFirstChild("BodyTypeScale"):Destroy()
+		wait(1)
 
-	rm()
-	wait(0.5)
-	Humanoid:FindFirstChild("BodyWidthScale"):Destroy()
-	wait(1)
+		rm()
+		wait(0.5)
+		Humanoid:FindFirstChild("BodyWidthScale"):Destroy()
+		wait(1)
 
-	rm()
-	wait(0.5)
-	Humanoid:FindFirstChild("BodyDepthScale"):Destroy()
-	wait(1)
+		rm()
+		wait(0.5)
+		Humanoid:FindFirstChild("BodyDepthScale"):Destroy()
+		wait(1)
 
-	rm()
-	wait(0.5)
-	Humanoid:FindFirstChild("HeadScale"):Destroy()
-	wait(1)
-end)
+		rm()
+		wait(0.5)
+		Humanoid:FindFirstChild("HeadScale"):Destroy()
+		wait(1)
+	end)
 
 CheckerPattern_4.Name = "CheckerPattern"
 CheckerPattern_4.Parent = ResizeSmallMediumr15
@@ -537,61 +279,61 @@ ResizeLargeExtraLarger15.TextScaled = true
 ResizeLargeExtraLarger15.TextSize = 1.000
 ResizeLargeExtraLarger15.TextWrapped = true
 ResizeLargeExtraLarger15.MouseButton1Down:connect(function()
-	--made by Dev!#6969
+		--made by Dev!#6969
 
-	local LocalPlayer = game:GetService("Players").LocalPlayer
-	local Character = LocalPlayer.Character
-	local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+		local LocalPlayer = game:GetService("Players").LocalPlayer
+		local Character = LocalPlayer.Character
+		local Humanoid = Character:FindFirstChildOfClass("Humanoid")
 
-	function rm()
-		for i,v in pairs(Character:GetDescendants()) do
-			if v:IsA("BasePart") then
-				if v.Name == "Handle" or v.Name == "Head" then
-					if Character.Head:FindFirstChild("OriginalSize") then
-						Character.Head.OriginalSize:Destroy()
-					end
-				else
-					for i,cav in pairs(v:GetDescendants()) do
-						if cav:IsA("Attachment") then
-							if cav:FindFirstChild("OriginalPosition") then
-								cav.OriginalPosition:Destroy()  
+		function rm()
+			for i,v in pairs(Character:GetDescendants()) do
+				if v:IsA("BasePart") then
+					if v.Name == "Handle" or v.Name == "Head" then
+						if Character.Head:FindFirstChild("OriginalSize") then
+							Character.Head.OriginalSize:Destroy()
+						end
+					else
+						for i,cav in pairs(v:GetDescendants()) do
+							if cav:IsA("Attachment") then
+								if cav:FindFirstChild("OriginalPosition") then
+									cav.OriginalPosition:Destroy()  
+								end
 							end
 						end
-					end
-					v:FindFirstChild("OriginalSize"):Destroy()
-					if v:FindFirstChild("AvatarPartScaleType") then
-						v:FindFirstChild("AvatarPartScaleType"):Destroy()
+						v:FindFirstChild("OriginalSize"):Destroy()
+						if v:FindFirstChild("AvatarPartScaleType") then
+							v:FindFirstChild("AvatarPartScaleType"):Destroy()
+						end
 					end
 				end
 			end
 		end
-	end
 
-	rm()
-	wait(0.5)
-	Humanoid:FindFirstChild("BodyProportionScale"):Destroy()
-	wait(1)
+		rm()
+		wait(0.5)
+		Humanoid:FindFirstChild("BodyProportionScale"):Destroy()
+		wait(1)
 
-	rm()
-	wait(0.5)
-	Humanoid:FindFirstChild("BodyHeightScale"):Destroy()
-	wait(1)
+		rm()
+		wait(0.5)
+		Humanoid:FindFirstChild("BodyHeightScale"):Destroy()
+		wait(1)
 
-	rm()
-	wait(0.5)
-	Humanoid:FindFirstChild("BodyWidthScale"):Destroy()
-	wait(1)
+		rm()
+		wait(0.5)
+		Humanoid:FindFirstChild("BodyWidthScale"):Destroy()
+		wait(1)
 
-	rm()
-	wait(0.5)
-	Humanoid:FindFirstChild("BodyDepthScale"):Destroy()
-	wait(1)
+		rm()
+		wait(0.5)
+		Humanoid:FindFirstChild("BodyDepthScale"):Destroy()
+		wait(1)
 
-	rm()
-	wait(0.5)
-	Humanoid:FindFirstChild("HeadScale"):Destroy()
-	wait(1)
-end)
+		rm()
+		wait(0.5)
+		Humanoid:FindFirstChild("HeadScale"):Destroy()
+		wait(1)
+	end)
 
 CheckerPattern_5.Name = "CheckerPattern"
 CheckerPattern_5.Parent = ResizeLargeExtraLarger15
@@ -606,17 +348,142 @@ CheckerPattern_5.ScaleType = Enum.ScaleType.Tile
 CheckerPattern_5.SliceCenter = Rect.new(0, 256, 0, 256)
 CheckerPattern_5.TileSize = UDim2.new(0, 45, 0, 45)
 
+emotes.Name = "emotes"
+emotes.Parent = Chroma
+emotes.BackgroundColor3 = Color3.fromRGB(99, 99, 99)
+emotes.Position = UDim2.new(0.499691248, 0, 0.534078538, 0)
+emotes.Size = UDim2.new(0, 200, 0, 50)
+emotes.Font = Enum.Font.SourceSans
+emotes.Text = "Free Emotes"
+emotes.TextColor3 = Color3.fromRGB(0, 0, 0)
+emotes.TextScaled = true
+emotes.TextSize = 1.000
+emotes.TextWrapped = true
+emotes.MouseButton1Down:connect(function()
+		local emotes = {
+			ok = 7198989668,
+			nice = 7202863182,
+			happy = 4841405708,
+			sad = 4841407203,
+			monkey = 3333499508,
+			baby = 4265725525,
+			line = 4049037604,
+			ahh = 5915648917,
+			twirl = 3334968680,
+			top = 3361276673,
+			dizzy = 3361426436,
+			shy = 3337978742,
+			side = 3333136415,
+			dorky = 4212455378,
+			robot = 3338025566,
+			shuffle = 4349242221,
+			around = 3303391864,
+			tpose = 3338010159,
+			body = 3333387824,
+			fancy = 3333432454,
+			celebrate = 3338097973,
+			idol = 4101966434,
+			hands = 4265701731,
+			haha = 3337966527,
+			curtsy = 4555816777,
+			airdance = 4555782893,
+			zombie = 4210116953,
+			tree = 4049551434,
+			swoosh = 3361481910,
+			great = 3338042785,
+			sneaky = 3334424322,
+			jacks = 3338066331,
+			getout = 3333272779,
+			fish = 3334832150,
+			loud = 3338083565,
+			ypose = 4349285876,
+			borock = 3236842542,
+			udzal = 3303161675,
+			hype = 3695333486,
+			floss = 5917459365,
+			fancy = 3333432454,
+			beckon = 5230598276,
+			tree = 4049551434,
+			bored = 5230599789,
+			cower = 4940563117,
+			applaud = 5915693819,
+			chacha = 3695322025,
+			superhero = 3695373233,
+			airguitar = 3695300085
+		}
+
+		local active = {}
+
+		local player = game.Players.LocalPlayer
+		chatcon = player.Chatted:Connect(function(msg)
+			msg = string.lower(msg)
+
+			local separate = string.sub(msg,1,3)
+			if separate == "/e " then
+				local cmd = string.sub(msg,4,string.len(msg))
+
+				if emotes[cmd] then
+					for i,v in pairs(active) do
+						v:Stop(0.1)
+						active[i] = nil
+					end
+
+					local Anim = Instance.new("Animation")
+					Anim.AnimationId = "rbxassetid://"..emotes[cmd]
+
+					player.Character.Animate.Disabled = true
+					local toplay = player.Character.Humanoid.Animator:LoadAnimation(Anim)
+					toplay:Play(0.1,1,1)
+
+					active[cmd] = toplay
+					con = player.Character.Humanoid.Running:connect(function(speed)
+						if speed > 0.5 then
+							player.Character.Animate.Disabled = false
+							toplay:Stop(0.1)
+							active[cmd] = nil
+							con:Disconnect()
+						end
+					end)
+					jumpcon = player.Character.Humanoid.Jumping:connect(function()
+						player.Character.Animate.Disabled = false
+						toplay:Stop(0.1)
+						active[cmd] = nil
+						jumpcon:Disconnect()
+					end)
+				elseif cmd == "disable" then
+					for i,v in pairs(active) do
+						v:Stop(0.1)
+					end
+
+					chatcon:Disconnect()
+				end
+			end
+		end)
+
+CheckerPattern_6.Name = "CheckerPattern"
+CheckerPattern_6.Parent = emotes
+CheckerPattern_6.AnchorPoint = Vector2.new(0.5, 0.5)
+CheckerPattern_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CheckerPattern_6.BackgroundTransparency = 1.000
+CheckerPattern_6.Position = UDim2.new(0.504068315, 0, 0.502829075, 0)
+CheckerPattern_6.Size = UDim2.new(0, 199, 0, 49)
+CheckerPattern_6.Image = "rbxassetid://121480522"
+CheckerPattern_6.ImageTransparency = 0.600
+CheckerPattern_6.ScaleType = Enum.ScaleType.Tile
+CheckerPattern_6.SliceCenter = Rect.new(0, 256, 0, 256)
+CheckerPattern_6.TileSize = UDim2.new(0, 45, 0, 45)
+
 -- Scripts:
 
-local function TROSBB_fake_script() -- CloseButton.ToggleGuiScript 
+local function UMKUL_fake_script() -- CloseButton.ToggleGuiScript 
 	local script = Instance.new('LocalScript', CloseButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(TROSBB_fake_script)()
-local function JBNBRD_fake_script() -- Main.LocalScript 
+coroutine.wrap(UMKUL_fake_script)()
+local function YFLPM_fake_script() -- Main.LocalScript 
 	local script = Instance.new('LocalScript', Main)
 
 	local UIS = game:GetService('UserInputService')
@@ -655,4 +522,4 @@ local function JBNBRD_fake_script() -- Main.LocalScript
 	end)
 	
 end
-coroutine.wrap(JBNBRD_fake_script)()
+coroutine.wrap(YFLPM_fake_script)()
