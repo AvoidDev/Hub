@@ -9,7 +9,7 @@ local UIGradient = Instance.new("UIGradient")
 local Credits = Instance.new("TextLabel")
 local CheckerPattern = Instance.new("ImageLabel")
 local Name = Instance.new("TextLabel")
-local CircleReach = Instance.new("TextButton")
+local FreeEmotes = Instance.new("TextButton")
 local CheckerPattern_2 = Instance.new("ImageLabel")
 local ClickToTeleport = Instance.new("TextButton")
 local CheckerPattern_3 = Instance.new("ImageLabel")
@@ -19,8 +19,6 @@ local ResizeSmallMediumr15 = Instance.new("TextButton")
 local CheckerPattern_4 = Instance.new("ImageLabel")
 local ResizeLargeExtraLarger15 = Instance.new("TextButton")
 local CheckerPattern_5 = Instance.new("ImageLabel")
-local emotes = Instance.new("TextButton")
-local CheckerPattern_6 = Instance.new("ImageLabel")
 
 --Properties:
 
@@ -80,50 +78,122 @@ Name.TextColor3 = Color3.fromRGB(255, 255, 255)
 Name.TextSize = 25.000
 Name.TextWrapped = true
 
-CircleReach.Name = "Circle Reach"
-CircleReach.Parent = Main
-CircleReach.BackgroundColor3 = Color3.fromRGB(99, 99, 99)
-CircleReach.Position = UDim2.new(0.10009557, 0, 0.229491383, 0)
-CircleReach.Size = UDim2.new(0, 191, 0, 50)
-CircleReach.Font = Enum.Font.SourceSans
-CircleReach.Text = "Circle Reach ( Sword Fighting undetected )"
-CircleReach.TextColor3 = Color3.fromRGB(0, 0, 0)
-CircleReach.TextScaled = true
-CircleReach.TextSize = 1.000
-CircleReach.TextWrapped = true
-CircleReach.MouseButton1Down:connect(function()
+FreeEmotes.Name = "Free Emotes"
+FreeEmotes.Parent = Main
+FreeEmotes.BackgroundColor3 = Color3.fromRGB(99, 99, 99)
+FreeEmotes.Position = UDim2.new(0.10009557, 0, 0.229491383, 0)
+FreeEmotes.Size = UDim2.new(0, 191, 0, 50)
+FreeEmotes.Font = Enum.Font.SourceSans
+FreeEmotes.Text = "Free Emotes"
+FreeEmotes.TextColor3 = Color3.fromRGB(0, 0, 0)
+FreeEmotes.TextScaled = true
+FreeEmotes.TextSize = 1.000
+FreeEmotes.TextWrapped = true
+FreeEmotes.MouseButton1Down:connect(function()
+	local emotes = {
+		ok = 7198989668,
+		nice = 7202863182,
+		happy = 4841405708,
+		sad = 4841407203,
+		monkey = 3333499508,
+		baby = 4265725525,
+		line = 4049037604,
+		ahh = 5915648917,
+		twirl = 3334968680,
+		top = 3361276673,
+		dizzy = 3361426436,
+		shy = 3337978742,
+		side = 3333136415,
+		dorky = 4212455378,
+		robot = 3338025566,
+		shuffle = 4349242221,
+		around = 3303391864,
+		tpose = 3338010159,
+		body = 3333387824,
+		fancy = 3333432454,
+		celebrate = 3338097973,
+		idol = 4101966434,
+		hands = 4265701731,
+		haha = 3337966527,
+		curtsy = 4555816777,
+		airdance = 4555782893,
+		zombie = 4210116953,
+		tree = 4049551434,
+		swoosh = 3361481910,
+		great = 3338042785,
+		sneaky = 3334424322,
+		jacks = 3338066331,
+		getout = 3333272779,
+		fish = 3334832150,
+		loud = 3338083565,
+		ypose = 4349285876,
+		borock = 3236842542,
+		udzal = 3303161675,
+		hype = 3695333486,
+		floss = 5917459365,
+		fancy = 3333432454,
+		beckon = 5230598276,
+		tree = 4049551434,
+		bored = 5230599789,
+		cower = 4940563117,
+		applaud = 5915693819,
+		chacha = 3695322025,
+		superhero = 3695373233,
+		airguitar = 3695300085
+	}
 
-	local active = true
-	local trueActive = true
-	local reachType = "Sphere"
-	local dmgEnabled = true
-	local visualizerEnabled = false
+	local active = {}
 
-	local visualizer = Instance.new("Part")
-	visualizer.BrickColor = BrickColor.Red()
-	visualizer.Transparency = 0.6
-	visualizer.Anchored = true
-	visualizer.CanCollide = false
-	visualizer.Size = Vector3.new(0.5,0.5,0.5)
-	visualizer.BottomSurface = Enum.SurfaceType.Smooth
-	visualizer.TopSurface = Enum.SurfaceType.Smooth
+	local player = game.Players.LocalPlayer
+	chatcon = player.Chatted:Connect(function(msg)
+		msg = string.lower(msg)
 
-	local ScreenGui = Instance.new("ScreenGui")
-	local Frame = Instance.new("Frame")
-	local TextLabel = Instance.new("TextLabel")
-	local TextBox = Instance.new("TextBox")
-	local TextLabel_2 = Instance.new("TextLabel")
-	local TextLabel_3 = Instance.new("TextLabel")
-	local TextLabel_4 = Instance.new("TextLabel")
-	local TextButton = Instance.new("TextButton")
-	local Frame_2 = Instance.new("Frame")
-	local Frame_3 = Instance.new("Frame")
-	local Frame_4 = Instance.new("Frame")
-	local Frame_5 = Instance.new("Frame")
-	local TextButton_2 = Instance.new("TextButton")
+		local separate = string.sub(msg,1,3)
+		if separate == "/e " then
+			local cmd = string.sub(msg,4,string.len(msg))
+
+			if emotes[cmd] then
+				for i,v in pairs(active) do
+					v:Stop(0.1)
+					active[i] = nil
+				end
+
+				local Anim = Instance.new("Animation")
+				Anim.AnimationId = "rbxassetid://"..emotes[cmd]
+
+				player.Character.Animate.Disabled = true
+				local toplay = player.Character.Humanoid.Animator:LoadAnimation(Anim)
+				toplay:Play(0.1,1,1)
+
+				active[cmd] = toplay
+				con = player.Character.Humanoid.Running:connect(function(speed)
+					if speed > 0.5 then
+						player.Character.Animate.Disabled = false
+						toplay:Stop(0.1)
+						active[cmd] = nil
+						con:Disconnect()
+					end
+				end)
+				jumpcon = player.Character.Humanoid.Jumping:connect(function()
+					player.Character.Animate.Disabled = false
+					toplay:Stop(0.1)
+					active[cmd] = nil
+					jumpcon:Disconnect()
+				end)
+			elseif cmd == "disable" then
+				for i,v in pairs(active) do
+					v:Stop(0.1)
+				end
+
+				chatcon:Disconnect()
+
+			end
+		end
+	end)
+
 
 CheckerPattern_2.Name = "CheckerPattern"
-CheckerPattern_2.Parent = CircleReach
+CheckerPattern_2.Parent = FreeEmotes
 CheckerPattern_2.AnchorPoint = Vector2.new(0.5, 0.5)
 CheckerPattern_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 CheckerPattern_2.BackgroundTransparency = 1.000
@@ -146,7 +216,7 @@ ClickToTeleport.TextColor3 = Color3.fromRGB(0, 0, 0)
 ClickToTeleport.TextScaled = true
 ClickToTeleport.TextSize = 1.000
 ClickToTeleport.TextWrapped = true
-ClickToTeleport.MouseButton1Down:connect(function()
+	ClickToTeleport.MouseButton1Down:connect(function()
 		mouse = game.Players.LocalPlayer:GetMouse()
 		tool = Instance.new("Tool")
 		tool.RequiresHandle = false
@@ -207,52 +277,52 @@ ResizeSmallMediumr15.TextScaled = true
 ResizeSmallMediumr15.TextSize = 1.000
 ResizeSmallMediumr15.TextWrapped = true
 ResizeSmallMediumr15.MouseButton1Down:connect(function()
-		-- script made by Dev!#6969
+	-- script made by Dev!#6969
 
-		local LocalPlayer = game:GetService("Players").LocalPlayer
-		local Character = LocalPlayer.Character
-		local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+	local LocalPlayer = game:GetService("Players").LocalPlayer
+	local Character = LocalPlayer.Character
+	local Humanoid = Character:FindFirstChildOfClass("Humanoid")
 
-		local function rm()
-			for i,v in pairs(Character:GetDescendants()) do
-				if v:IsA("BasePart") then
-					if v.Name ~= "Head" then
-						for i,cav in pairs(v:GetDescendants()) do
-							if cav:IsA("Attachment") then
-								if cav:FindFirstChild("OriginalPosition") then
-									cav.OriginalPosition:Destroy()
-								end
+	local function rm()
+		for i,v in pairs(Character:GetDescendants()) do
+			if v:IsA("BasePart") then
+				if v.Name ~= "Head" then
+					for i,cav in pairs(v:GetDescendants()) do
+						if cav:IsA("Attachment") then
+							if cav:FindFirstChild("OriginalPosition") then
+								cav.OriginalPosition:Destroy()
 							end
 						end
-						v:FindFirstChild("OriginalSize"):Destroy()
-						if v:FindFirstChild("AvatarPartScaleType") then
-							v:FindFirstChild("AvatarPartScaleType"):Destroy()
-						end
+					end
+					v:FindFirstChild("OriginalSize"):Destroy()
+					if v:FindFirstChild("AvatarPartScaleType") then
+						v:FindFirstChild("AvatarPartScaleType"):Destroy()
 					end
 				end
 			end
 		end
+	end
 
-		rm()
-		wait(0.5)
-		Humanoid:FindFirstChild("BodyTypeScale"):Destroy()
-		wait(1)
+	rm()
+	wait(0.5)
+	Humanoid:FindFirstChild("BodyTypeScale"):Destroy()
+	wait(1)
 
-		rm()
-		wait(0.5)
-		Humanoid:FindFirstChild("BodyWidthScale"):Destroy()
-		wait(1)
+	rm()
+	wait(0.5)
+	Humanoid:FindFirstChild("BodyWidthScale"):Destroy()
+	wait(1)
 
-		rm()
-		wait(0.5)
-		Humanoid:FindFirstChild("BodyDepthScale"):Destroy()
-		wait(1)
+	rm()
+	wait(0.5)
+	Humanoid:FindFirstChild("BodyDepthScale"):Destroy()
+	wait(1)
 
-		rm()
-		wait(0.5)
-		Humanoid:FindFirstChild("HeadScale"):Destroy()
-		wait(1)
-	end)
+	rm()
+	wait(0.5)
+	Humanoid:FindFirstChild("HeadScale"):Destroy()
+	wait(1)
+end)
 
 CheckerPattern_4.Name = "CheckerPattern"
 CheckerPattern_4.Parent = ResizeSmallMediumr15
@@ -278,7 +348,7 @@ ResizeLargeExtraLarger15.TextColor3 = Color3.fromRGB(0, 0, 0)
 ResizeLargeExtraLarger15.TextScaled = true
 ResizeLargeExtraLarger15.TextSize = 1.000
 ResizeLargeExtraLarger15.TextWrapped = true
-ResizeLargeExtraLarger15.MouseButton1Down:connect(function()
+	ResizeLargeExtraLarger15.MouseButton1Down:connect(function()
 		--made by Dev!#6969
 
 		local LocalPlayer = game:GetService("Players").LocalPlayer
@@ -335,6 +405,8 @@ ResizeLargeExtraLarger15.MouseButton1Down:connect(function()
 		wait(1)
 	end)
 
+
+
 CheckerPattern_5.Name = "CheckerPattern"
 CheckerPattern_5.Parent = ResizeLargeExtraLarger15
 CheckerPattern_5.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -348,142 +420,17 @@ CheckerPattern_5.ScaleType = Enum.ScaleType.Tile
 CheckerPattern_5.SliceCenter = Rect.new(0, 256, 0, 256)
 CheckerPattern_5.TileSize = UDim2.new(0, 45, 0, 45)
 
-emotes.Name = "emotes"
-emotes.Parent = Chroma
-emotes.BackgroundColor3 = Color3.fromRGB(99, 99, 99)
-emotes.Position = UDim2.new(0.499691248, 0, 0.534078538, 0)
-emotes.Size = UDim2.new(0, 200, 0, 50)
-emotes.Font = Enum.Font.SourceSans
-emotes.Text = "Free Emotes"
-emotes.TextColor3 = Color3.fromRGB(0, 0, 0)
-emotes.TextScaled = true
-emotes.TextSize = 1.000
-emotes.TextWrapped = true
-emotes.MouseButton1Down:connect(function()
-		local emotes = {
-			ok = 7198989668,
-			nice = 7202863182,
-			happy = 4841405708,
-			sad = 4841407203,
-			monkey = 3333499508,
-			baby = 4265725525,
-			line = 4049037604,
-			ahh = 5915648917,
-			twirl = 3334968680,
-			top = 3361276673,
-			dizzy = 3361426436,
-			shy = 3337978742,
-			side = 3333136415,
-			dorky = 4212455378,
-			robot = 3338025566,
-			shuffle = 4349242221,
-			around = 3303391864,
-			tpose = 3338010159,
-			body = 3333387824,
-			fancy = 3333432454,
-			celebrate = 3338097973,
-			idol = 4101966434,
-			hands = 4265701731,
-			haha = 3337966527,
-			curtsy = 4555816777,
-			airdance = 4555782893,
-			zombie = 4210116953,
-			tree = 4049551434,
-			swoosh = 3361481910,
-			great = 3338042785,
-			sneaky = 3334424322,
-			jacks = 3338066331,
-			getout = 3333272779,
-			fish = 3334832150,
-			loud = 3338083565,
-			ypose = 4349285876,
-			borock = 3236842542,
-			udzal = 3303161675,
-			hype = 3695333486,
-			floss = 5917459365,
-			fancy = 3333432454,
-			beckon = 5230598276,
-			tree = 4049551434,
-			bored = 5230599789,
-			cower = 4940563117,
-			applaud = 5915693819,
-			chacha = 3695322025,
-			superhero = 3695373233,
-			airguitar = 3695300085
-		}
-
-		local active = {}
-
-		local player = game.Players.LocalPlayer
-		chatcon = player.Chatted:Connect(function(msg)
-			msg = string.lower(msg)
-
-			local separate = string.sub(msg,1,3)
-			if separate == "/e " then
-				local cmd = string.sub(msg,4,string.len(msg))
-
-				if emotes[cmd] then
-					for i,v in pairs(active) do
-						v:Stop(0.1)
-						active[i] = nil
-					end
-
-					local Anim = Instance.new("Animation")
-					Anim.AnimationId = "rbxassetid://"..emotes[cmd]
-
-					player.Character.Animate.Disabled = true
-					local toplay = player.Character.Humanoid.Animator:LoadAnimation(Anim)
-					toplay:Play(0.1,1,1)
-
-					active[cmd] = toplay
-					con = player.Character.Humanoid.Running:connect(function(speed)
-						if speed > 0.5 then
-							player.Character.Animate.Disabled = false
-							toplay:Stop(0.1)
-							active[cmd] = nil
-							con:Disconnect()
-						end
-					end)
-					jumpcon = player.Character.Humanoid.Jumping:connect(function()
-						player.Character.Animate.Disabled = false
-						toplay:Stop(0.1)
-						active[cmd] = nil
-						jumpcon:Disconnect()
-					end)
-				elseif cmd == "disable" then
-					for i,v in pairs(active) do
-						v:Stop(0.1)
-					end
-
-					chatcon:Disconnect()
-				end
-			end
-		end)
-
-CheckerPattern_6.Name = "CheckerPattern"
-CheckerPattern_6.Parent = emotes
-CheckerPattern_6.AnchorPoint = Vector2.new(0.5, 0.5)
-CheckerPattern_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-CheckerPattern_6.BackgroundTransparency = 1.000
-CheckerPattern_6.Position = UDim2.new(0.504068315, 0, 0.502829075, 0)
-CheckerPattern_6.Size = UDim2.new(0, 199, 0, 49)
-CheckerPattern_6.Image = "rbxassetid://121480522"
-CheckerPattern_6.ImageTransparency = 0.600
-CheckerPattern_6.ScaleType = Enum.ScaleType.Tile
-CheckerPattern_6.SliceCenter = Rect.new(0, 256, 0, 256)
-CheckerPattern_6.TileSize = UDim2.new(0, 45, 0, 45)
-
 -- Scripts:
 
-local function UMKUL_fake_script() -- CloseButton.ToggleGuiScript 
+local function OOUQ_fake_script() -- CloseButton.ToggleGuiScript 
 	local script = Instance.new('LocalScript', CloseButton)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(UMKUL_fake_script)()
-local function YFLPM_fake_script() -- Main.LocalScript 
+coroutine.wrap(OOUQ_fake_script)()
+local function TXEHSVV_fake_script() -- Main.LocalScript 
 	local script = Instance.new('LocalScript', Main)
 
 	local UIS = game:GetService('UserInputService')
@@ -522,4 +469,6 @@ local function YFLPM_fake_script() -- Main.LocalScript
 	end)
 	
 end
-coroutine.wrap(YFLPM_fake_script)()
+coroutine.wrap(TXEHSVV_fake_script)()
+
+end)
